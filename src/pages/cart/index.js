@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
 
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
-    
-    return ( 
+
+    return (
         <Layout title="Cart" description="This is the Cart page" >
             <div >
                 <div className="text-center mt-5">
@@ -22,13 +22,13 @@ const Cart = () => {
                     <div className="col-sm-9 p-3">
                         {
                             cartItems.length > 0 ?
-                            <CartProducts/> :
-                            <div className="p-3 text-center text-muted">
-                                Your cart is empty
+                                <CartProducts /> :
+                                <div className="p-3 text-center text-muted">
+                                    Your cart is empty
                             </div>
                         }
 
-                        { checkout && 
+                        {checkout &&
                             <div className="p-3 text-center text-success">
                                 <p>Checkout successfull</p>
                                 <Link to="/" className="btn btn-outline-success btn-sm">BUY MORE</Link>
@@ -36,14 +36,14 @@ const Cart = () => {
                         }
                     </div>
                     {
-                        cartItems.length > 0 && 
+                        cartItems.length > 0 &&
                         <div className="col-sm-3 p-3">
                             <div className="card card-body">
                                 <p className="mb-1">Total Items</p>
                                 <h4 className=" mb-3 txt-right">{itemCount}</h4>
                                 <p className="mb-1">Total Payment</p>
                                 <h3 className="m-0 txt-right">{formatNumber(total)}</h3>
-                                <hr className="my-4"/>
+                                <hr className="my-4" />
                                 <div className="text-center">
                                     <button type="button" className="btn btn-primary mb-2" onClick={handleCheckout}>CHECKOUT</button>
                                     <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>CLEAR</button>
@@ -52,11 +52,11 @@ const Cart = () => {
                             </div>
                         </div>
                     }
-                    
+
                 </div>
             </div>
         </Layout>
-     );
+    );
 }
- 
+
 export default Cart;
