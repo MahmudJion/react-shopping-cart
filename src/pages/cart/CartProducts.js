@@ -8,7 +8,7 @@ const CartProducts = () => {
 
     const { cartItems } = useContext(CartContext);
 
-    return ( 
+    return (
         <div className={styles.p__container}>
             <div className="card card-body border-0">
 
@@ -21,5 +21,5 @@ const CartProducts = () => {
 
      );
 }
- 
+
 export default CartProducts;

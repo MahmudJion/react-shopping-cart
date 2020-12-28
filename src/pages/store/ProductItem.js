@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { formatNumber } from '../../helpers/utils';
 
@@ -18,7 +17,6 @@ const ProductItem = ({ product }) => {
             <p>{product.name}</p>
             <h3 className="text-left">{formatNumber(product.price)}</h3>
             <div className="text-right">
-                {/* <Link to="/" className="btn btn-link btn-sm mr-2">Details</Link> */}
 
                 {
                     isInCart(product) &&
